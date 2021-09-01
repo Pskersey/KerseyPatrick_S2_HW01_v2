@@ -11,7 +11,7 @@ public class SpeedIncrease : CollectibleBase
         TankController controller = player.GetComponent<TankController>();
         if(controller != null)
         {
-            controller.MaxSpeed += _speedAmount;
+            controller.MoveSpeed += _speedAmount;
         }
     } // End of Collect
 

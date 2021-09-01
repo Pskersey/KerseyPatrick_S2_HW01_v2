@@ -6,7 +6,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] int _maxHealth = 3;
-    int _currentHealth;
+    private int _currentHealth;
+    public int CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            value = Mathf.Clamp(value, 0, _maxHealth);
+            _currentHealth = value;
+        }
+    }
 
     TankController _tankController;
 
@@ -21,15 +30,11 @@ public class Player : MonoBehaviour
         _currentHealth = _maxHealth;
     } // End of Start
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    } //End of Update
-
+    
     public void IncreaseHealth(int amount)
     {
-        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+        //_currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+        _currentHealth += amount;
         Debug.Log("Player's Health : " + _currentHealth);
     } //End of Increase Health
 
