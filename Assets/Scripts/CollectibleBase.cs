@@ -38,6 +38,7 @@ public abstract class CollectibleBase : MonoBehaviour
         {
             Collect(player);
             //spawn particles & sfx because we need to disable object
+            _collectParticles.Play();
             Feedback();
 
             gameObject.SetActive(false);

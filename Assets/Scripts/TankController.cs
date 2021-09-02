@@ -24,6 +24,7 @@ public class TankController : MonoBehaviour
     {
         MoveTank();
         TurnTank();
+        if (_moveSpeed <= 0) MoveSpeed = 0.01f;
     }
 
     public void MoveTank()
